@@ -1,0 +1,390 @@
+/* google font cdn link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins','sans-serif';
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: lightblue;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: lightblue;
+}
+
+/*navbar style*/
+nav{
+    width: 100%;
+    height: 10vh;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+}
+
+.logo img{
+    width: 100%;
+    text-shadow: 0 0 10px lightblue;
+}
+
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    pointer-events: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links{
+    display: flex;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: lightblue;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: lightblue;
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter:blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: lightblue;
+}
+
+section{
+    width: 100%;
+    min-height: 90vh;
+}
+
+section .main-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    align-items: center;
+}
+
+.main-container .image{
+    position: relative;
+    width: 600px;
+    height: 80vh;
+    border-radius: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 50px lightblue;
+    transition: 0.2s linear;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+
+.main-container .image:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+    animation: animate 1.5 ease-in-out infinite;
+}
+
+.main-container .content{
+    color: white;
+    width: 40%;
+}
+
+.content h1{
+    font-size: clamp(1rem, 1rem + 5vh, 1.8rem);
+}
+
+.content h1 span{
+    color: lightblue;
+    text-shadow: 0 0 10px lightblue;
+}
+
+.content .typewritter{
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 600;
+}
+
+.content .typewritter-text{
+    color: lightblue;
+    text-shadow: 0 0 10px lightblue;
+}
+
+.typewritter span{
+    position: relative;
+}
+
+.typewritter span::before{
+    content: "Softare Development";
+    color: lightblue;
+    animation: words 10s ease-in-out infinite;
+}
+
+.typewritter span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes words{
+    0%,20%{
+        content:"Artist";
+    }
+    21%,40%{
+        content:"Gamer";
+    }
+    41%,60%{
+        content:"Basketball Player";
+    }
+    61%,80%{
+        content:"Cyclist";
+    }
+    81%,100%{
+        content:"KUPAL";
+    }
+}
+
+.content p{
+    font-size: clamp(0.4rem, 0.2 + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+.social-icon i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid lightblue;
+    border-radius: 50%;
+    color: lightblue;
+    margin: 3rem 1.5rem 3rem 0;
+    font-size: 2rem;
+    transition: 0.3s linear;
+}
+
+.social-icon i:hover{
+    scale: 1.3s;
+    color: black;
+    background-color: lightblue;
+    filter: drop-shadow(0 0 25px lightblue);
+}
+
+/*About Section*/
+
+section .content{
+    width: 80%;
+    margin: 0px auto;
+    font-family: 'Poppins',sans-serif;
+}
+
+.about .about-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+section .title span{
+    color: white;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+section .title span::before,
+section .title span::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: lightblue;
+    left: 0;
+    bottom: 0;
+}
+
+section .title span::after{
+    bottom: -7px;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.about .about-detail .left{
+    width: 45%;
+}
+
+.about .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-detail .right{
+}
+
+section .topic{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.about-details .right {
+    font-size: clamp(0.4rem, 0.2 + 9vw, 1rem);
+    text-align: justify;
+}
+
+.about-detail p{
+    color: white;
+}
+
+/*skills*/
+
+.skills{
+    background: black;
+}
+
+.skills .content{
+    padding: 40px 0;
+}
+
+.skills .skills-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills-details .text{
+    width: 50%;
+}
+
+.skills-details p{
+    color: white;
+    text-align: justify;
+}
+
+.skills .skills-details .experience{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.skills-details .experience .num{
+    color: white;
+    font-size: 80px;
+}
+
+.skills-details .experience .exp{
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 6px;
+}
+
+.skills-details .boxes{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills-details .box{
+    width: calc(100%/2 - 20px);
+    margin: 20px 0;
+}
+
+.skills-details .boxes .topic{
+    font-size: 20px;
+    color: lightblue;
+}
+
+.skills-details .boxes .per{
+    font-size: 60px;
+    color: lightblue;
+}
